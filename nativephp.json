@@ -1,0 +1,27 @@
+{
+    "namespace": "NSFWChecker",
+    "platforms": ["ios", "android"],
+    "bridge_functions": [
+        {
+            "name": "NSFWChecker.CheckImage",
+            "ios": "NSFWCheckerFunctions.CheckImage",
+            "android": "com.codypchristian.nsfwchecker.NSFWCheckerFunctions.CheckImage",
+            "android_params": ["context"],
+            "description": "Analyse a local image file for sensitive (nude or sexually explicit) content"
+        }
+    ],
+    "ios": {
+        "min_version": "17.0",
+        "entitlements": {
+            "com.apple.developer.sensitivecontentanalysis.client": ["analysis"]
+        }
+    },
+    "android": {
+        "min_version": 24,
+        "dependencies": {
+            "implementation": [
+                "com.google.android.gms:play-services-mlkit-image-labeling:16.0.8"
+            ]
+        }
+    }
+}

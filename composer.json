@@ -1,0 +1,50 @@
+{
+    "name": "codypchristian/nativephp-nsfw-checker",
+    "description": "On-device sensitive image detection for NativePHP Mobile v4 — Apple's SensitiveContentAnalysis on iOS, an ML Kit label heuristic on Android.",
+    "type": "nativephp-plugin",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Cody (QikSolutions, LLC)"
+        }
+    ],
+    "require": {
+        "php": "^8.3",
+        "nativephp/mobile": "^4.0|dev-main"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^9.0 || ^10.0",
+        "pestphp/pest": "^2.7 || ^3.0 || ^4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "CodyPChristian\\NSFWChecker\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "pest"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "CodyPChristian\\NSFWChecker\\NSFWCheckerServiceProvider"
+            ]
+        },
+        "nativephp": {
+            "manifest": "nativephp.json"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

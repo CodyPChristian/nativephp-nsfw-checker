@@ -1,0 +1,14 @@
+/vendor
+/build
+composer.lock
+auth.json
+.env
+.env.*
+!.env.example
+.DS_Store
+Thumbs.db
+.phpunit.result.cache
+/.phpunit.cache
+.idea
+.vscode
+.fleet
